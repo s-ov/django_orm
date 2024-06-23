@@ -1,0 +1,24 @@
+<!--  THIS IS FOR prefetch_related()  --> 
+
+
+{% extends 'core/base.html' %}
+
+{% block content %}
+
+{% for restaurant in restaurants %}
+    <h4>{{ restaurant.name }}</h4>
+
+    <ul>
+        {% for rating in restaurant.ratings.all %}
+            <li>{{ rating.rating }}</li>
+        {% endfor %}
+    </ul>
+    <ul>
+        {% for sale in restaurant.sales.all %}
+            <li>{{ sale.income }}</li>
+        {% endfor %}
+    </ul> 
+
+{% endfor %}
+
+{% endblock %}

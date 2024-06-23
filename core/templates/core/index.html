@@ -1,0 +1,23 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+
+<div class="container">
+    {% for restaurant in restaurants %}
+        
+            <a href="{{ restaurant.get_absolute_url }}">{{ restaurant.name }}</a>
+            <br />   
+        
+    {% endfor %}
+</div>
+
+{% endblock %}
+
+<!--  
+    THIS IS FOR select_related()  
+
+        {% for rating in ratings %}
+            <p>{{ rating.restaurant.name }} - {{ rating }}</p>
+    
+        {% endfor %}
+--> 4
